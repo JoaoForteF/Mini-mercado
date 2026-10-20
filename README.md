@@ -1,6 +1,14 @@
 # Mini-mercado
 
-Projeto desenvolvido em Java com o objetivo de praticar os conceitos básicos de programação orientada a objetos.
+O Mini-mercado é um sistema desenvolvido em Java para simular o funcionamento de um caixa de mercadinho.
+
+O sistema possui duas áreas principais:
+
+Gestor: permite cadastrar, consultar, atualizar e excluir produtos, além de gerenciar o estoque.
+
+Atendente: permite iniciar o expediente, registrar as compras dos clientes e calcular o valor total das vendas.
+
+O projeto tem como objetivo praticar conceitos de programação orientada a objetos, utilizando classes, métodos, construtores e estruturas de controle.
 
 ## Funcionalidades
 
@@ -27,7 +35,7 @@ Praticar a criação de classes, métodos, construtores, objetos e estruturas de
 - Implementar o encapsulamento dos atributos.
 - Validar os dados dos produtos.
 - Implementar o controle de estoque.
-- Corrigir a lógica de compras e cálculo do total.
+- Corrigir a lógica de compras e cálculo do total. 
 - Melhorar o funcionamento dos menus.
 - Implementar a geração de relatórios.
 - Integrar o sistema ao Google Sheets para armazenar os dados.
