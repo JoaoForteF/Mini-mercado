@@ -1,3 +1,5 @@
+// AQUI A SERA DEFINIDO AS CARACTERISTICAS DOS PRODUTOS
+
 public class Produto {
 
     private int codigo;
