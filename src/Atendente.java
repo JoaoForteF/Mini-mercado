@@ -2,6 +2,17 @@
 
 import java.util.Scanner;
 
+public class Atendente extends Funcionarios {
+
+    private Scanner entrada;
+    private Estoque estoque;
+
+    public Atendente(String nome, int matricula, Scanner entrada, Estoque estoque) {
+        super(nome, matricula);
+        this.entrada = entrada;
+        this.estoque = estoque;
+    }
+
 public class Atendente {
 
     Scanner entrada = new Scanner(System.in);
