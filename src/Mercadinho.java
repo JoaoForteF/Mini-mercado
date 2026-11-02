@@ -1,43 +1,52 @@
-// inicialização do sistema
+//
 
 import java.util.Scanner;
 
 public class Mercadinho {
 
     Scanner entrada = new Scanner(System.in);
-    Gerente gerente = new Gerente();
-    Atendente funcionario = new Atendente();
+    Estoque estoque = new Estoque();
+    Gerente gerente = new Gerente("Joao", 101, entrada, estoque);
+    Atendente atendente = new Atendente("Maria", 102, entrada,estoque);
 
     public void iniciar() {
+        int matricula;
+        String senha;
 
-        System.out.println("    ");
-        System.out.println("Olá, Bom dia!!");
-        System.out.println("Qual Será o Primeiro Passo?");
-        System.out.println("    ");
-        System.out.println("1 - Execultar como Administrador");
-        System.out.println("2 - Iniciar o Expediente");
-        System.out.println("    ");
+        do {
 
-        System.out.print("Escolha uma opção: ");
-        System.out.println("    ");
+            System.out.println("\n### LOGIN DO SISTEMA ###");
+            System.out.println("Digite (0) na matricula caso queira finalizar o sistema.");
 
-        int opcao = entrada.nextInt();
+            System.out.print("\nMatricula: ");
+            matricula = entrada.nextInt();
+            entrada.nextLine();
 
-        if(opcao==1) {
-
-            System.out.println("Você iniciou o sistema como ADM!!");
-            gerente.iniciar();
-        }
-        else if(opcao==2){
-            System.out.println("    ");
-            System.out.println("Você Está IniciandO o Expediente!!");
-            funcionario.iniciar();
+            if (matricula == 0) {
+                System.out.println("Encerrando o sistema...");
+                break;
             }
-        else{
-            System.out.println("Essa opção e invalida!!");
-        }
 
+            System.out.print("Senha: ");
+            senha = entrada.nextLine();
+
+            if (matricula == 101 && senha.equals("1234")) {
+
+                System.out.println("\nBem-vindo, " + gerente.getNome() + "!");
+                gerente.iniciar();
+
+            } else if (matricula == 102 && senha.equals("5678")) {
+
+                System.out.println("\nBem-vindo, " + atendente.getNome() + "!");
+                atendente.iniciar();
+
+            } else {
+
+                System.out.println("\nMatricula ou senha incorreta!");
+
+            }
+
+        } while (true);
 
     }
-
 }

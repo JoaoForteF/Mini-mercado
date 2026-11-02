@@ -1,6 +1,5 @@
 // Aqui vai ser onde e cadastrado as opções do administrador
 
-
 import java.util.Scanner;
 
 public class Gerente extends Funcionarios {
@@ -13,47 +12,83 @@ public class Gerente extends Funcionarios {
         this.entrada = entrada;
         this.estoque = estoque;
     }
-public class Gerente {
-    Scanner entrada = new Scanner(System.in);
+
     public void iniciar() {
-        System.out.println("    ");
-        System.out.println("## AREA DO GERENTE ##");
-        System.out.println("    ");
-        System.out.println("1 - Cadastrar produto");
-        System.out.println("2 - Consultar Estoque");
-        System.out.println("3 - Gerar Relatorio");
-        System.out.println("4 - Sair");
-        System.out.println("    ");
+
+        int opcao;
+
+        do {
+
+            System.out.println("    ");
+            System.out.println("## AREA DO GERENTE ##");
+            System.out.println("    ");
+            System.out.println("1 - Cadastrar produto");
+            System.out.println("2 - Consultar Estoque");
+            System.out.println("3 - Gerar Relatorio");
+            System.out.println("4 - Sair");
+            System.out.println("    ");
 
             System.out.print("Escolha uma opção: ");
             System.out.println("    ");
+
             opcao = entrada.nextInt();
             entrada.nextLine();
 
-        if (opcao == 1) {
-            cadastrarProduto();
-        } else if (opcao == 2) {
-            consultarEstoque();
-        } else if (opcao == 3) {
-            gerarRelatorio();
-        } else if (opcao == 4) {
-            System.out.println("Saindo...");
-        } else {
-            System.out.println("Opção inválida!");
-        }
+            if (opcao == 1) {
+                cadastrarProduto();
+            } else if (opcao == 2) {
+                consultarEstoque();
+            } else if (opcao == 3) {
+                gerarRelatorio();
+            } else if (opcao == 4) {
+                System.out.println("Saindo...");
+            } else {
+                System.out.println("Opção inválida!");
+            }
+        } while (opcao != 4);
 
     }
 
 
     public void cadastrarProduto() {
-        System.out.println("Cadastro de produto");
-    }
 
+        System.out.println("\n### CADASTRO DE PRODUTO ###");
+
+        System.out.print("Codigo: ");
+        int codigo = entrada.nextInt();
+        entrada.nextLine();
+
+        if (estoque.buscarProduto(codigo) != null) {
+            System.out.println("Esse codigo ja esta cadastrado!");
+            return;
+        }
+
+        System.out.print("Nome do produto: ");
+        String nome = entrada.nextLine();
+
+        System.out.print("Preco: ");
+        double preco = entrada.nextDouble();
+
+        System.out.print("Quantidade: ");
+        int quantidade = entrada.nextInt();
+
+        if (preco <= 0 || quantidade < 0) {
+            System.out.println("Preco ou quantidade invalida!");
+            return;
+        }
+
+        Produto produto = new Produto(codigo, nome, preco, quantidade);
+
+        estoque.cadastrarProduto(produto);
+    }
     public void consultarEstoque() {
-        System.out.println("Consulta de estoque");
+        System.out.println("\n### CONSULTA DE ESTOQUE ###");
+
+        estoque.listarProdutos();
     }
 
     public void gerarRelatorio() {
-        System.out.println("Geração de relatório");
+
+        estoque.gerarRelatorio();
     }
-}
+    }

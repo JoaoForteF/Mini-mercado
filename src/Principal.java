@@ -1,4 +1,4 @@
-// De inicio a principal servira apenas para iniciar o programa
+// INCIALIZAÇÃO DO SISTEMA
 
 public class Principal {
 
