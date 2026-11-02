@@ -3,6 +3,16 @@
 
 import java.util.Scanner;
 
+public class Gerente extends Funcionarios {
+
+    private Scanner entrada;
+    private Estoque estoque;
+
+    public Gerente(String nome, int matricula, Scanner entrada, Estoque estoque) {
+        super(nome, matricula);
+        this.entrada = entrada;
+        this.estoque = estoque;
+    }
 public class Gerente {
     Scanner entrada = new Scanner(System.in);
     public void iniciar() {
