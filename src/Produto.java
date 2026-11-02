@@ -1,8 +1,9 @@
 public class Produto {
 
-    int codigo;
-    String nome;
-    double preco;
+    private int codigo;
+    private String nome;
+    private double preco;
+    private int quantidade;
 
     public Produto(int codigo, String nome, double preco) {
         this.codigo = codigo;
