@@ -25,9 +25,10 @@ public class Gerente {
         System.out.println("4 - Sair");
         System.out.println("    ");
 
-        System.out.print("Escolha uma opção: ");
-        System.out.println("    ");
-        int opcao = entrada.nextInt();
+            System.out.print("Escolha uma opção: ");
+            System.out.println("    ");
+            opcao = entrada.nextInt();
+            entrada.nextLine();
 
         if (opcao == 1) {
             cadastrarProduto();
